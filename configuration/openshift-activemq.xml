@@ -169,10 +169,10 @@
             clients and other brokers. For more information, see:
             http://activemq.apache.org/configuring-transports.html
         -->
-        <!--<transportConnectors>
-            <transportConnector name="openwire" uri="tcp://0.0.0.0:61616?maximumConnections=2500&amp;wireFormat.maxFrameSize=104857600" />
+        <transportConnectors>
+            <!--transportConnector name="openwire" uri="tcp://0.0.0.0:61616?maximumConnections=2500&amp;wireFormat.maxFrameSize=104857600" /-->
             <transportConnector name="ssl" uri="ssl://0.0.0.0:61617?maximumConnections=2500&amp;wireFormat.maxFrameSize=104857600" />
-        </transportConnectors> -->
+        </transportConnectors>
 
         <!--sslContext>
             <sslContext keyStore="file:/etc/amq-secret-volume/broker.ks"
