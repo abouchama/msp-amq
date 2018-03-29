@@ -202,7 +202,6 @@
         </transportConnectors>
 
        <sslContext>
-       <sslContext>
             <sslContext keyStore="file:{AMQ_KEYSTORE_TRUSTSTORE_DIR}/{AMQ_KEYSTORE}"
                         keyStorePassword="{AMQ_KEYSTORE_PASSWORD}"
                         trustStore="file:{AMQ_KEYSTORE_TRUSTSTORE_DIR}/{AMQ_TRUSTSTORE}"
