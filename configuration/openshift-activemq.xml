@@ -42,12 +42,6 @@
     <!--broker xmlns="http://activemq.apache.org/schema/core" brokerName="${HOSTNAME}" dataDirectory="${activemq.data}" schedulePeriodForDestinationPurge="10000"-->
     <broker xmlns="http://activemq.apache.org/schema/core" brokerName="${HOSTNAME}" dataDirectory="${activemq.data}">
 
-        <destinations>
-            <queue physicalName="USERS.TEST.QUEUE" />
-            <queue physicalName="USERS.PROD.QUEUE" />
-            <queue physicalName="KEVIN.YOU.ROCK" />
-        </destinations>
-
         <destinationPolicy>
             <policyMap>
                 <policyEntries>
@@ -197,8 +191,8 @@
             http://activemq.apache.org/configuring-transports.html
         -->
         <transportConnectors>
-            <transportConnector name="openwire" uri="tcp://0.0.0.0:61616?maximumConnections=2500&amp;wireFormat.maxFrameSize=104857600"/>
-            <transportConnector name="ssl" uri="ssl://0.0.0.0:61617?maximumConnections=2500&amp;wireFormat.maxFrameSize=104857600" />
+            <transportConnector name="openwire" uri="tcp://0.0.0.0:61616?maximumConnections=2500&amp;wireFormat.maxFrameSize=104857600" discoveryUri="multicast://default" />
+            <transportConnector name="ssl" uri="ssl://0.0.0.0:61617?maximumConnections=2500&amp;wireFormat.maxFrameSize=104857600" discoveryUri="multicast://default" />
         </transportConnectors>
 
        <sslContext>
