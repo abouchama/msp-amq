@@ -1,15 +1,6 @@
-FROM registry.access.redhat.com/openshift3/ose-logging-curator:latest
+#Only for test in local machine - uncomment below lines
+#FROM registry.access.redhat.com/jboss-amq-6/amq63-openshift:latest
 
-MAINTAINER Prateek Bansal <pbansal@smartshifttech.com>
+#MAINTAINER Prateek Bansal <pbansal@smartshifttech.com>
 
-ENV HOME=/opt/app-root/src
-
-RUN mkdir -p ${HOME}
-
-ADD run_cron.py run.sh ${HOME}/
-
-WORKDIR ${HOME}
-
-USER 1000
-
-CMD ["sh", "run.sh"]
+#ADD /configuration/log4j.properties configuration/openshift-activemq.xml $AMQ_HOME/conf/
