@@ -163,6 +163,18 @@
             <virtualSelectorCacheBrokerPlugin persistFile="${activemq.data}/selectorCache" persistInterval="900" /-->
 
             <jaasAuthenticationPlugin configuration="activemq" />
+
+            <authorizationPlugin>
+                <map>
+                  <authorizationMap>
+                    <authorizationEntries>
+                      <authorizationEntry queue=">" read="admin" write="admin" admin="admin" />
+                      <authorizationEntry topic=">" read="admin" write="admin" admin="admin" />
+                      <authorizationEntry queue="msp.dwh.>" read="dwh" write="admin" admin="admin" />
+                    </authorizationEntries>
+                  </authorizationMap>
+                </map>
+            </authorizationPlugin>
         </plugins>
 
         <!--
