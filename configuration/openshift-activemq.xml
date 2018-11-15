@@ -69,6 +69,14 @@
                             <conditionalNetworkBridgeFilterFactory replayWhenNoConsumers="true" replayDelay="500" />
                         </networkBridgeFilterFactory>
                     </policyEntry>
+                    <policyEntry queue="msp.dwh>" producerFlowControl="true" memoryLimit="${AMQ_QUEUE_MEMORY_LIMIT}" useCache="false">
+                        <networkBridgeFilterFactory>
+                            <conditionalNetworkBridgeFilterFactory replayWhenNoConsumers="true" replayDelay="500" />
+                        </networkBridgeFilterFactory>
+                        <deadLetterStrategy>
+                            <individualDeadLetterStrategy queuePrefix="DLQ.DWH." useQueueForQueueMessages="true"/>
+                        </deadLetterStrategy>
+                    </policyEntry>
                     <policyEntry topic=">" producerFlowControl="true">
                         <!--
                             The constantPendingMessageLimitStrategy is used to prevent
